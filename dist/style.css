@@ -1,0 +1,84 @@
+:root {
+    --bg-color: #f8edff;
+    --dark-grey: #3d3b40;
+    --filled: #525ceb;
+    --success: #597e52;
+    --fail: #d24545;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--dark-grey);
+  }
+
+  body,
+  #gameboards > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #gameboards {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .row > div {
+    border: 2px solid var(--bg-color);
+    background-color: var(--dark-grey);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+
+  #player-gameboard .row:first-child div:first-child,
+  #computer-gameboard .row:first-child div:first-child {
+    border-radius: 16px 0 0 0;
+  }
+
+  #player-gameboard .row:first-child div:last-child,
+  #computer-gameboard .row:first-child div:last-child {
+    border-radius: 0 16px 0 0;
+  }
+
+  #player-gameboard .row:last-child div:first-child,
+  #computer-gameboard .row:last-child div:first-child {
+    border-radius: 0 0 0 16px;
+  }
+
+  #player-gameboard .row:last-child div:last-child,
+  #computer-gameboard .row:last-child div:last-child {
+    border-radius: 0 0 16px 0;
+  }
+
+  #player-gameboard .filled {
+    background-color: var(--filled);
+  }
+
+  #player-gameboard .hit,
+  #computer-gameboard .hit {
+    background-color: var(--fail);
+    color: var(--bg-color);
+  }
+
+  #computer-gameboard .filled.hit,
+  #player-gameboard .filled.hit {
+    background-color: var(--success);
+    color: var(--bg-color);
+  }
+
+  #result {
+    background-color: var(--dark-grey);
+    padding: 8px 16px;
+    border-radius: 16px;
+    color: var(--bg-color);
+  }
